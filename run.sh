@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python main.py
+nohup python main.py &

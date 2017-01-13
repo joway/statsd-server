@@ -11,7 +11,6 @@ statsd = statsd_lib.StatsClient(host=STATSD_HOST, port=STATSD_PORT, prefix=hostn
 
 def monitoring_gauge(key, obj):
     for item in obj.__dict__:
-        print '%s.%s' % (key, item), obj.__getattribute__(item)
         statsd.gauge('%s.%s' % (key, item), int(obj.__getattribute__(item)))
 
 
